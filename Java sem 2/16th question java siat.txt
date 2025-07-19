@@ -1,0 +1,96 @@
+public class WordCount {  
+      static int wordcount(String string)  
+        {  
+          int count=0;  
+      
+            char ch[]= new char[string.length()];     
+            for(int i=0;i<string.length();i++)  
+            {  
+                ch[i]= string.charAt(i);  
+                if( ((i>0)&&(ch[i]!=' ')&&(ch[i-1]==' ')) || ((ch[0]!=' ')&&(i==0)) )  
+                    count++;  
+            }  
+            return count;  
+        }  
+      public static void main(String[] args) {  
+          String string ="    India Is My Country";  
+         System.out.println(wordcount(string) + " words.");   
+    }  
+}  
+
+
+
+
+public class CountVowelConsonant {  
+    public static void main(String[] args) {  
+          
+        //Counter variable to store the count of vowels and consonant  
+        int vCount = 0, cCount = 0;  
+          
+        //Declare a string  
+        String str = "This is a really simple sentence";  
+          
+        //Converting entire string to lower case to reduce the comparisons  
+        str = str.toLowerCase();  
+          
+        for(int i = 0; i < str.length(); i++) {  
+            //Checks whether a character is a vowel  
+            if(str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u') {  
+                //Increments the vowel counter  
+                vCount++;  
+            }  
+            //Checks whether a character is a consonant  
+            else if(str.charAt(i) >= 'a' && str.charAt(i)<='z') {    
+                //Increments the consonant counter  
+                cCount++;  
+            }  
+        }  
+        System.out.println("Number of vowels: " + vCount);  
+        System.out.println("Number of consonants: " + cCount);  
+    }  
+}  
+Output:
+
+Number of vowels: 10
+Number of consonants: 17
+
+
+
+public class StringFormatter {  
+public static String capitalizeWord(String str){  
+    String words[]=str.split("\\s");  
+    String capitalizeWord="";  
+    for(String w:words){  
+        String first=w.substring(0,1);  
+        String afterfirst=w.substring(1);  
+        capitalizeWord+=first.toUpperCase()+afterfirst+" ";  
+    }  
+    return capitalizeWord.trim();  
+}  
+}  
+
+
+
+public class PalindromeString    
+{    
+    public static void main(String[] args) {    
+        String string = "Kayak";    
+        boolean flag = true;    
+            
+        //Converts the given string into lowercase    
+        string = string.toLowerCase();    
+            
+        //Iterate the string forward and backward, compare one character at a time     
+        //till middle of the string is reached    
+        for(int i = 0; i < string.length()/2; i++){    
+            if(string.charAt(i) != string.charAt(string.length()-i-1)){    
+                flag = false;    
+                break;    
+            }    
+        }    
+        if(flag)    
+            System.out.println("Given string is palindrome");    
+        else    
+            System.out.println("Given string is not a palindrome");    
+    }    
+}    

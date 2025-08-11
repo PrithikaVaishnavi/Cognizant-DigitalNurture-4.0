@@ -1,9 +1,0 @@
-# Ignore Eclipse specific files
-.classpath
-.project
-.settings/
-bin/
-
-# Ignore OS files
-.DS_Store
-Thumbs.db
